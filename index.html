@@ -15,6 +15,7 @@
     This is a placeholder for base href that will be replaced by the value of
     the `--base-href` argument provided to `flutter build`.
   -->
+
   <script src="https://cdn.jsdelivr.net/npm/url-launcher@6.0.20/js/url_launcher_web.min.js"
     type="application/javascript"></script>
 
@@ -33,10 +34,62 @@
 
   <title>ibrahim_lokman_info</title>
   <link rel="manifest" href="manifest.json">
+  <script defer src="index.dart.js" type="application/javascript"></script>
+
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-radius: 50%;
+      border-top: 16px solid grey;
+      border-right: 16px solid grey;
+      border-bottom: 16px solid black;
+      border-left: 16px solid black;
+      width: 50px;
+      height: 50px;
+      -webkit-animation: spin 2s linear infinite;
+      animation: spin 2s linear infinite;
+    }
+
+    @-webkit-keyframes spin {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <div class="loading">
+    <div class="loader"></div>
+  </div>
+
+  <script src="main.dart.js" type="application/javascript"></script>
 </body>
 
 </html>
